@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MamaEarthSkinMatchAI | Your Perfect Skincare Routine</title>
+    <meta name="description"
+        content="Find your perfect skincare routine with AI-powered analysis and natural ingredients by MamaEarthSkinMatchAI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="brand">MamaEarthSkinMatchAI</a>
+            <nav class="nav-links">
+                <a href="#analyzer">Skin Analyzer</a>
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#analyzer">Skin Analyzer</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <h1 class="fade-up">Find Your Perfect <br><span class="highlight">Skincare Routine</span> with AI</h1>
+            <p class="fade-up delay-1">Organic, calm, and premium skincare guidance tailored exactly to your unique skin
+                type using advanced AI analysis.</p>
+            <a href="#analyzer" class="btn btn-primary fade-up delay-2">Start Skin Analysis</a>
+        </div>
+    </section>
+
+    <!-- Skin Analyzer Section -->
+    <section class="analyzer" id="analyzer">
+        <div class="container">
+            <div class="section-header text-center fade-up">
+                <h2>AI Skin Analyzer</h2>
+                <p>Tell us about your skin and our advanced AI will instantly build a custom routine.</p>
+            </div>
+
+            <div class="analyzer-wrapper fade-up delay-1">
+                <form id="skinAnalyzerForm" class="analyzer-form">
+                    <div class="form-group">
+                        <label for="skinType">What is your skin type?</label>
+                        <select id="skinType" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="oily">Oily</option>
+                            <option value="dry">Dry</option>
+                            <option value="combination">Combination</option>
+                            <option value="normal">Normal</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="skinConcern">What are your main skin concerns?</label>
+                        <select id="skinConcern" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="acne">Acne & Blemishes</option>
+                            <option value="pigmentation">Pigmentation & Dark Spots</option>
+                            <option value="dryness">Extreme Dryness & Flaking</option>
+                            <option value="aging">Fine Lines & Aging</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ageGroup">Age Group</label>
+                        <select id="ageGroup" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="teens">Teens (13-19)</option>
+                            <option value="twenties">20s</option>
+                            <option value="thirties">30s</option>
+                            <option value="forties">40s</option>
+                            <option value="fifties_plus">50+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sensitivity">Skin Sensitivity Level</label>
+                        <select id="sensitivity" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="low">Low (Rarely reacts)</option>
+                            <option value="medium">Medium (Sometimes reacts)</option>
+                            <option value="high">High (Very sensitive, easily reacts)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-full mt-4">Generate Routine</button>
+                </form>
+
+                <div id="analyzerResult" class="analyzer-result hidden">
+                    <div class="loader" id="analyzerLoader"></div>
+                    <div id="routineContent" class="hidden">
+                        <h3>Your Personalized Routine</h3>
+                        <div class="routine-steps" id="routineSteps">
+                            <!-- Dynamic steps will be injected here -->
+                        </div>
+                        <button class="btn btn-outline w-full mt-6" id="resetAnalyzer">Retake Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommended Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header text-center fade-up">
+                <h2>Recommended Products</h2>
+                <p>Our top picks formulate with natural, eco-friendly ingredients.</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card fade-up">
+                    <div class="product-img-wrapper">
+                        <img src="assets/product_cleanser.png" alt="Hydrating Face Cleanser" class="product-img"
+                            loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-badge">Normal & Dry</span>
+                        <h3>Purifying Gentle Cleanser</h3>
+                        <p>Deeply cleanses without stripping moisture, infused with aloe vera and chamomile.</p>
+                        <button class="btn btn-secondary w-full">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card fade-up delay-1">
+                    <div class="product-img-wrapper">
+                        <img src="assets/product_serum.png" alt="Organic Face Serum" class="product-img" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-badge">All Skin Types</span>
+                        <h3>Glow Amplifying Serum</h3>
+                        <p>Vitamin C-rich formula that brightens up the complexion and fades dark spots.</p>
+                        <button class="btn btn-secondary w-full">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card fade-up delay-2">
+                    <div class="product-img-wrapper">
+                        <img src="assets/product_cream.png" alt="Soothing Night Cream" class="product-img"
+                            loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-badge">Dry & Sensitive</span>
+                        <h3>Soothing Recovery Night Cream</h3>
+                        <p>Intensely repairs the skin barrier overnight with ceramides and green tea extract.</p>
+                        <button class="btn btn-secondary w-full">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-light" id="about">
+        <div class="container">
+            <div class="about-content fade-up">
+                <div class="about-text">
+                    <h2>Our Mission</h2>
+                    <p class="lead">AI-powered skincare guidance combined with the healing power of natural ingredients.
+                    </p>
+                    <p>At MamaEarthSkinMatchAI, we believe that everyone deserves healthy, glowing skin without the
+                        guesswork. We've bridged the gap between cutting-edge Artificial Intelligence and Mother Earth’s
+                        most potent botanicals to help you discover the perfect skincare routine tailored precisely to
+                        your needs.</p>
+                    <p>No harsh chemicals. No endless trial and error. Just smart, sustainable skincare recommendations
+                        that actually work.</p>
+                </div>
+                <div class="about-image-wrapper">
+                    <div class="aesthetic-shape"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header text-center fade-up">
+                <h2>Get in Touch</h2>
+                <p>Have questions? We'd love to hear from you.</p>
+            </div>
+
+            <div class="contact-form fade-up delay-1 text-center"
+                style="background: transparent; box-shadow: none; padding: 1rem;">
+                <a href="https://wa.me/918380804489?text=Hi%20MamaEarthSkinMatchAI!%20I%20have%20a%20question..."
+                    target="_blank" class="btn btn-primary" style="padding: 1.25rem 3rem; font-size: 1.125rem;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px;">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                    </svg>
+                    Send Message via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 MamaEarthSkinMatchAI. All Rights Reserved. Crafted with nature and AI.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </div>
+        <div class="chatbot-window hidden" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <div class="online-indicator"></div>
+                    <span>SkinMatch AI Expert</span>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    Hi! I'm your AI Skincare Expert. How can I help you find your glow today? 🌱
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatInput" placeholder="Type your skincare question...">
+                <button id="chatSend">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+
+</html>
